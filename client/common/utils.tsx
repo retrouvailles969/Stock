@@ -2,13 +2,13 @@ import { Item, ItemStatus } from "./types";
 
 export function getStatusBadgeColor(status: ItemStatus): string {
   switch (status) {
-    case "Available":
+    case "On Check":
       return "green";
-    case "Maintenance":
+    case "Tidak Sesuai":
       return "orange";
-    case "Loaned":
+    case "Salah Tempat":
       return "pink";
-    case "Reserved":
+    case "Sesuai":
       return "violet";
     default:
       return "violet";
@@ -20,10 +20,10 @@ export const placeholderItem: Item = {
   name: "Item name",
   description:
     "This is a sample description that contains many alphanumeric characters.",
-  status: "Available",
+  status: "On Check",
   stock: 0,
   image: "https://placehold.co/600x400?text=Image",
-  price: 0,
+  aktual: 0,
   category: "",
 };
 

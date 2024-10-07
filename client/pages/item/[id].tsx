@@ -166,7 +166,7 @@ export default function ItemPage({ backendURL, displayError }: appProps) {
             >
               <IconPremiumRights color="gold" size={50} />
               <Text fw={700} ta="center" size="xl">
-                {item.price}
+                {item.aktual}
               </Text>
             </Group>
           </Grid.Col>

@@ -1,4 +1,4 @@
-export type ItemStatus = "Available" | "Maintenance" | "Loaned" | "Reserved";
+export type ItemStatus = "On Check" | "Tidak Sesuai" | "Salah Tempat" | "Sesuai";
 
 export interface Category {
   _id: string;
@@ -17,7 +17,7 @@ export interface Item {
   status: ItemStatus;
   stock: number;
   image: string;
-  price: number;
+  aktual: number;
   category: string;
 }
 

@@ -14,12 +14,12 @@ const ItemSchema = new Schema({
   status: {
     type: String,
     required: true,
-    enum: ["Available", "Maintenance", "Loaned", "Reserved"],
-    default: "Available",
+    enum: ["On Check", "Tidak Sesuai", "Salah Tempat", "Sesuai"],
+    default: "On Check",
   },
   stock: { type: Number, required: true, default: 0, min: 0 },
   image: { type: Object, default: {} },
-  price: { type: Number, required: true, default: 0, min: 0 },
+  aktual: { type: Number, required: true, default: 0, min: 0 },
   category: { type: Schema.Types.ObjectId, required: true, ref: "Category" }, // reference to the associated category
 });
 

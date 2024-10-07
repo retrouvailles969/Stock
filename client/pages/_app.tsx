@@ -38,14 +38,14 @@ export default function App({ Component, pageProps }: any) {
   return (
     <MantineProvider defaultColorScheme="dark" theme={theme}>
       <Head>
-        <title>invento</title>
+        <title>Audit Stock Bahan Baku</title>
         <link
           rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏨</text></svg>"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>"
         />
         <meta
           name="description"
-          content="A basic inventory management app with search capabilities built with MERN stack."
+          content="Audit Stock Bahan Baku PT Koyorad Jaya Indonesia"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>

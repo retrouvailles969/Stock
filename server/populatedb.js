@@ -43,7 +43,7 @@ async function itemCreate(
   description,
   status,
   stock,
-  price,
+  aktual,
   category,
   image = false
 ) {
@@ -52,7 +52,7 @@ async function itemCreate(
     description: description,
     status: status,
     stock: stock,
-    price: price,
+    aktual: aktual,
     category: category,
   };
   if (image != false) item_.image = image;
@@ -67,245 +67,73 @@ async function itemCreate(
 async function createCategories() {
   console.log("Adding categories");
   await Promise.all([
-    categoryCreate(
-      0,
-      "Electronics",
-      "Devices and gadgets that operate through electronic systems"
-    ),
-    categoryCreate(
-      1,
-      "Clothing",
-      "Various types of apparel for men, women, and children"
-    ),
-    categoryCreate(
-      2,
-      "Groceries",
-      "Food and household items for daily consumption"
-    ),
-    categoryCreate(
-      3,
-      "Books",
-      "Printed and digital reading materials, including novels, textbooks, and more"
-    ),
-    categoryCreate(
-      4,
-      "Home Decor",
-      "Items used to decorate and enhance the aesthetic appeal of homes"
-    ),
-    categoryCreate(
-      5,
-      "Toys",
-      "Playthings for children that promote entertainment and learning"
-    ),
-    categoryCreate(
-      6,
-      "Furniture",
-      "Various types of movable objects intended to support various human activities"
-    ),
-    categoryCreate(
-      7,
-      "Tools",
-      "Instruments used to carry out particular functions or tasks"
-    ),
-    categoryCreate(
-      8,
-      "Sports Equipment",
-      "Gear and accessories used in various sports and recreational activities"
-    ),
+    categoryCreate(0, "Aluminum Sheets", "Aluminum sheets used for radiator cores and fins"),
+    categoryCreate(1, "Copper Tubes", "Copper tubing for efficient heat transfer in radiators"),
+    categoryCreate(2, "Brass Components", "Brass components for connectors and fittings in radiators"),
+    categoryCreate(3, "Plastic End Caps", "Durable plastic end caps used to seal radiator ends"),
+    categoryCreate(4, "Rubber Seals", "Heat-resistant rubber seals for preventing leakage"),
+    categoryCreate(5, "Steel Frames", "Steel structures and frames for mounting radiators"),
+    categoryCreate(6, "Coolant Fluids", "Coolant liquids, such as ethylene glycol, for heat dissipation"),
+    categoryCreate(7, "Zinc Coatings", "Zinc coatings to prevent corrosion of metal parts"),
+    categoryCreate(8, "Thermal Paste", "Conductive paste used to improve heat transfer between surfaces"),
+    categoryCreate(9, "Brazing Rods", "Brazing rods for joining metal components"),
+    categoryCreate(10, "Silicone Sealants", "Silicone-based sealants for leak-proof sealing in radiators"),
+    categoryCreate(11, "Radiator Fins", "Aluminum or copper fins for enhancing heat dissipation"),
+    categoryCreate(12, "Gaskets", "Rubber or metal gaskets used for sealing joints and connections"),
+    categoryCreate(13, "Hoses", "Flexible rubber or silicone hoses for fluid transmission"),
+    categoryCreate(14, "Welded Joints", "Pre-fabricated welded joints for connecting pipes and components"),
+    categoryCreate(15, "Antifreeze", "Additives to prevent freezing in cooling systems"),
+    categoryCreate(16, "Adhesive Tapes", "High-strength adhesive tapes used in radiator assembly"),
+    categoryCreate(17, "Pressure Relief Valves", "Valves used to control pressure buildup in radiator systems"),
+    categoryCreate(18, "Mounting Brackets", "Metal brackets for securely mounting radiators in place"),
+    categoryCreate(19, "Radiator Cores", "Central parts of radiators that allow heat exchange between fluids"),
   ]);
 }
 
 async function createItems() {
   console.log("Adding items");
   await Promise.all([
-    itemCreate(
-      0,
-      "Smartphone",
-      "A high-end smartphone with advanced features",
-      "Available",
-      20,
-      899.99,
-      categories[0]
-    ),
-    itemCreate(
-      1,
-      "T-shirt",
-      "A comfortable cotton T-shirt",
-      "Available",
-      50,
-      25.99,
-      categories[1]
-    ),
-    itemCreate(
-      2,
-      "Milk",
-      "Fresh cow milk",
-      "Available",
-      100,
-      2.99,
-      categories[2]
-    ),
-    itemCreate(
-      3,
-      "The Great Gatsby",
-      "A classic novel by F. Scott Fitzgerald",
-      "Available",
-      30,
-      12.49,
-      categories[3]
-    ),
-    itemCreate(
-      4,
-      "Decorative Vase",
-      "A handcrafted decorative vase",
-      "Available",
-      15,
-      69.99,
-      categories[4]
-    ),
-    itemCreate(
-      5,
-      "Lego Set",
-      "A creative Lego building set for kids",
-      "Available",
-      40,
-      49.99,
-      categories[5]
-    ),
-    itemCreate(
-      6,
-      "Sofa",
-      "A comfortable 3-seater sofa",
-      "Available",
-      5,
-      599.99,
-      categories[6]
-    ),
-    itemCreate(
-      7,
-      "Hammer",
-      "A sturdy hammer for household repairs",
-      "Available",
-      25,
-      9.99,
-      categories[7]
-    ),
-    itemCreate(
-      7,
-      "Screwdriver",
-      "A sturdy screwdriver for household repairs",
-      "Available",
-      25,
-      19.99,
-      categories[7]
-    ),
-    itemCreate(
-      7,
-      "Gorilla Glue",
-      "A sticky glue for household repairs",
-      "Reserved",
-      25,
-      29.99,
-      categories[7]
-    ),
-    itemCreate(
-      8,
-      "Yoga Mat",
-      "A high-quality yoga mat for exercise",
-      "Available",
-      30,
-      29.99,
-      categories[8]
-    ),
-    itemCreate(
-      8,
-      "5kg Dumbell",
-      "A high-quality dumbell for exercise",
-      "Reserved",
-      130,
-      129.99,
-      categories[8]
-    ),
-    itemCreate(
-      0,
-      "Headphones",
-      "High-quality over-ear headphones with noise-cancellation feature",
-      "Loaned",
-      15,
-      199.99,
-      categories[0]
-    ),
-    itemCreate(
-      1,
-      "Dress Shirt",
-      "A formal dress shirt made of premium cotton fabric",
-      "Available",
-      30,
-      49.99,
-      categories[1]
-    ),
-    itemCreate(
-      2,
-      "Apples",
-      "Fresh, organic apples from local farms",
-      "Available",
-      200,
-      1.99,
-      categories[2]
-    ),
-    itemCreate(
-      3,
-      "The Catcher in the Rye",
-      "A popular novel by J.D. Salinger",
-      "Available",
-      20,
-      9.99,
-      categories[3]
-    ),
-    itemCreate(
-      4,
-      "Wall Clock",
-      "A vintage-style wall clock with a silent mechanism",
-      "Loaned",
-      8,
-      39.99,
-      categories[4]
-    ),
-    itemCreate(
-      5,
-      "Remote Control Car",
-      "A battery-powered remote control car for kids",
-      "Available",
-      25,
-      34.99,
-      categories[5]
-    ),
-    itemCreate(
-      6,
-      "Dining Table",
-      "A sturdy wooden dining table with six chairs",
-      "Maintenance",
-      3,
-      799.99,
-      categories[6]
-    ),
-    itemCreate(
-      7,
-      "Screwdriver Set",
-      "A set of screwdrivers with various tip sizes for household use",
-      "Maintenance",
-      0,
-      19.99,
-      categories[7]
-    ),
-    itemCreate(
-      8,
-      "Yoga Ball",
-      "A durable yoga ball for core strengthening exercises",
-      "Maintenance",
-      20,
-      19.99,
-      categories[8]
-    ),
+    // Bahan baku untuk produksi inti radiator
+    itemCreate(0, "Aluminum Sheet 1mm", "Lembaran aluminium tipis untuk fin radiator", "On Check", 500, 450, categories[0]),
+    itemCreate(1, "Aluminum Sheet 2mm", "Lembaran aluminium tebal untuk pelat samping", "Sesuai", 300, 300, categories[0]),
+    itemCreate(2, "Copper Tube 10mm", "Tabung tembaga untuk pipa penyaluran panas", "Tidak Sesuai", 200, 180, categories[1]),
+    itemCreate(3, "Copper Tube 15mm", "Tabung tembaga diameter besar untuk sirkulasi utama", "On Check", 150, 145, categories[1]),
+    itemCreate(4, "Brass Connector", "Konektor kuningan untuk sambungan pipa", "Sesuai", 600, 600, categories[2]),
+    itemCreate(5, "Steel Plate 5mm", "Pelat baja untuk rangka radiator", "Sesuai", 250, 250, categories[3]),
+    itemCreate(6, "Steel Plate 3mm", "Pelat baja tipis untuk penutup luar", "Salah Tempat", 350, 360, categories[3]),
+    itemCreate(7, "Plastic End Cap Type A", "Penutup plastik untuk radiator kecil", "On Check", 800, 750, categories[4]),
+    itemCreate(8, "Plastic End Cap Type B", "Penutup plastik untuk radiator besar", "Tidak Sesuai", 400, 390, categories[4]),
+
+    // Bahan baku untuk sistem pendingin
+    itemCreate(9, "Radiator Coolant Type A", "Cairan pendingin untuk radiator", "Sesuai", 500, 500, categories[5]),
+    itemCreate(10, "Radiator Coolant Type B", "Cairan pendingin formula khusus", "On Check", 600, 580, categories[5]),
+    itemCreate(11, "Radiator Coolant Concentrate", "Konsentrat pendingin radiator", "Tidak Sesuai", 450, 440, categories[5]),
+    itemCreate(12, "Thermal Paste High Temp", "Pasta termal untuk distribusi panas yang efisien", "Sesuai", 1000, 1000, categories[6]),
+    itemCreate(13, "Thermal Tape 10mm", "Pita termal untuk komponen radiator", "On Check", 500, 490, categories[6]),
+    
+    // Bahan baku pengencang dan sambungan
+    itemCreate(14, "Steel Bolt M10", "Baut baja untuk sambungan utama radiator", "Sesuai", 2000, 2000, categories[7]),
+    itemCreate(15, "Steel Nut M10", "Mur baja M10 untuk sambungan radiator", "On Check", 1800, 1700, categories[7]),
+    itemCreate(16, "Steel Washer M10", "Ring baja untuk pengencang M10", "Salah Tempat", 2200, 2300, categories[7]),
+    itemCreate(17, "Aluminum Rivet 5mm", "Rivet aluminium untuk sambungan", "Sesuai", 3000, 3000, categories[8]),
+    itemCreate(18, "Brass Valve", "Katup kuningan untuk pengaturan aliran", "On Check", 1500, 1400, categories[2]),
+    itemCreate(19, "Rubber Seal Ring 20mm", "Cincin karet untuk sambungan pipa", "Sesuai", 5000, 5000, categories[9]),
+
+    // Bahan baku komponen elektronik
+    itemCreate(20, "Cooling Fan 120mm", "Kipas pendingin untuk radiator elektronik", "Sesuai", 800, 800, categories[10]),
+    itemCreate(21, "Cooling Fan 80mm", "Kipas pendingin ukuran kecil", "On Check", 900, 880, categories[10]),
+    itemCreate(22, "Thermistor", "Sensor suhu untuk kontrol radiator", "Tidak Sesuai", 1500, 1450, categories[10]),
+    itemCreate(23, "Temperature Sensor", "Sensor suhu untuk monitoring", "Sesuai", 1200, 1200, categories[10]),
+    
+    // Bahan baku perlindungan
+    itemCreate(24, "Radiator Cover Type A", "Penutup radiator untuk perlindungan fisik", "Sesuai", 400, 400, categories[11]),
+    itemCreate(25, "Radiator Cover Type B", "Penutup radiator dengan ventilasi", "On Check", 450, 440, categories[11]),
+    itemCreate(26, "Heat Shield Plate", "Pelat pelindung panas", "Tidak Sesuai", 300, 290, categories[11]),
+
+    // Lainnya
+    itemCreate(27, "Epoxy Adhesive", "Lem epoxy untuk sambungan logam", "On Check", 700, 680, categories[12]),
+    itemCreate(28, "Radiator Paint Black", "Cat hitam tahan panas untuk radiator", "Sesuai", 900, 900, categories[13]),
+    itemCreate(29, "Radiator Paint Silver", "Cat perak untuk finishing radiator", "On Check", 850, 830, categories[13]),
+
   ]);
 }

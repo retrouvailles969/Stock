@@ -1,4 +1,4 @@
-// Reference: https://ui.mantine.dev/category/article-cards/#article-card-footer
+ // Reference: https://ui.mantine.dev/category/article-cards/#article-card-footer
 import { Card, Image, Group, Text, Badge } from "@mantine/core";
 import classes from "../styles/ArticleCardFooter.module.css";
 import { Item } from "../common/types";

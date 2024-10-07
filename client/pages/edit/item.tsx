@@ -18,7 +18,7 @@ export default function ItemForm({ backendURL, displayError }: appProps) {
   const router = useRouter();
   const editMode = router.query.item ? true : false; // if item has been specified, edit mode  = true
   const [categories, setCategories] = useState<Category[]>([]);
-  const validStatus = ["Available", "Maintenance", "Loaned", "Reserved"];
+  const validStatus = ["On Check", "Tidak Sesuai", "Salah Tempat", "Sesuai"];
 
   function getInitialItem() {
     if (editMode) {
@@ -31,10 +31,10 @@ export default function ItemForm({ backendURL, displayError }: appProps) {
       _id: "",
       name: "",
       description: "",
-      status: "Available",
+      status: "On Check",
       stock: 0,
       image: "",
-      price: 0,
+      aktual: 0,
       category: "",
     };
 
@@ -63,8 +63,8 @@ export default function ItemForm({ backendURL, displayError }: appProps) {
       },
       stock: (value: number) =>
         value < 0 ? "Stock must be a non-negative number" : null,
-      price: (value: number) =>
-        value < 0 ? "Price must be a non-negative number" : null,
+      aktual: (value: number) =>
+        value < 0 ? "Actual Stock must be inputed" : null,
       category: (value: string) =>
         getCategoryNames().includes(value) ? null : `Invalid category`,
       status: (value: ItemStatus) =>
@@ -81,7 +81,7 @@ export default function ItemForm({ backendURL, displayError }: appProps) {
           name: values.name,
           description: values.description,
           stock: values.stock,
-          price: values.price,
+          aktual: values.aktual,
           status: values.status,
           category: getCategoryID(values.category),
         };
@@ -92,7 +92,7 @@ export default function ItemForm({ backendURL, displayError }: appProps) {
         name: values.name,
         description: values.description,
         stock: values.stock,
-        price: values.price,
+        aktual: values.aktual,
         status: values.status,
         category: getCategoryID(values.category),
       };
@@ -194,7 +194,7 @@ export default function ItemForm({ backendURL, displayError }: appProps) {
             label="Description"
             {...form.getInputProps("description")}
           />
-          <NumberInput min={0} label="Price" {...form.getInputProps("price")} />
+          <NumberInput min={0} label="Aktual" {...form.getInputProps("aktual")} />
           <NumberInput min={0} label="Stock" {...form.getInputProps("stock")} />
           <NativeSelect
             label="Category"

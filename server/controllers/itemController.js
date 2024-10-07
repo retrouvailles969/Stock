@@ -136,7 +136,7 @@ exports.item_create_post = [
       description: req.body.description,
       status: req.body.status,
       stock: req.body.stock,
-      price: req.body.price,
+      aktual: req.body.aktual,
       category: req.body.category,
     };
 
@@ -202,7 +202,7 @@ exports.item_update_post = asyncHandler(async (req, res, next) => {
     _id: req.body._id,
     name: req.body.name,
     description: req.body.description,
-    price: req.body.price,
+    aktual: req.body.aktual,
     stock: req.body.stock,
     category: req.body.category, //! CATEGORY MUST BE ID
     status: req.body.status,

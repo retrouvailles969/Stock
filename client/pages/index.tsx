@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import {
   IconBoxSeam,
   IconCategory,
-  IconTruckDelivery,
   IconUsers,
 } from "@tabler/icons-react";
 import { appProps, Item } from "../common/types";
@@ -135,13 +134,6 @@ export default function Homepage({
               stroke={1.5}
             />{" "}
             <Text fz={"sm"}>Workers available: 10 </Text>
-          </Group>
-          <Group mt="lg">
-            <IconTruckDelivery
-              style={{ width: rem(30), height: rem(30), color: "#66B2FF" }}
-              stroke={1.5}
-            />{" "}
-            <Text fz={"sm"}>Lorries available: 3 </Text>
           </Group>
         </Card>
 
